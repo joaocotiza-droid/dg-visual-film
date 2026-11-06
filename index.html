@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>DG Visual Film · Películas arquitetônicas em Campinas</title>
+<meta name="description" content="DG Visual Film aplica películas arquitetônicas em Campinas e região: controle solar, privacidade (jato branco), espelhadas e proteção UV para casas, condomínios e empresas. Orçamento pelo WhatsApp (19) 98920-5208.">
+<meta name="theme-color" content="#14171A">
+<link rel="icon" href="img/logo-sm.webp">
+<style>
+@font-face{font-family:"Geist";font-style:normal;font-weight:300;font-display:swap;src:url(fonts/geist-sans-latin-300-normal.woff2) format("woff2")}
+@font-face{font-family:"Geist";font-style:normal;font-weight:400;font-display:swap;src:url(fonts/geist-sans-latin-400-normal.woff2) format("woff2")}
+@font-face{font-family:"Geist";font-style:normal;font-weight:500;font-display:swap;src:url(fonts/geist-sans-latin-500-normal.woff2) format("woff2")}
+@font-face{font-family:"Geist";font-style:normal;font-weight:600;font-display:swap;src:url(fonts/geist-sans-latin-600-normal.woff2) format("woff2")}
+:root{
+  --ac:#B8650F;--ac2:#E9A23B;--tint:#F6E7CF;--tint2:#FBF5EC;
+  --navy:#14171A;--navy2:#23272C;--ink:#111315;--ink2:#5C6066;--ink3:#90949A;
+  --line:#E6E3DE;--paper:#F5F3EF;--white:#fff;
+  --sans:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  --ease:cubic-bezier(.2,.7,.2,1)
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;color:var(--ink);font:400 16px/1.55 var(--sans);letter-spacing:-.008em;-webkit-font-smoothing:antialiased;overflow-x:clip;
+  background:linear-gradient(180deg,#CFC8BD 0,#DDD8CF 420px,#E9E6E0 1000px,#EFEDE9 1500px) fixed}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit;color:inherit}
+button{background:none;border:0;cursor:pointer;padding:0}
+:focus-visible{outline:2px solid var(--ac);outline-offset:3px;border-radius:10px}
+.skip{position:absolute;left:-999px;top:12px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:99px;z-index:99}
+.skip:focus{left:12px}
+.ic{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
+h1,h2,h3{margin:0;font-weight:500}
+p{margin:0}
+
+/* page backdrop: soft light beams */
+.bgc{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.bgc i{position:absolute;display:block;top:-20%;height:140%;width:220px;transform:rotate(18deg);background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);filter:blur(6px)}
+.bgc .a{left:8%}.bgc .b{left:62%;width:140px;opacity:.6}
+
+.sheet{max-width:1240px;margin:56px auto 0;background:var(--white);border-radius:30px 30px 0 0;padding:0 28px;box-shadow:0 40px 120px -60px rgba(60,40,20,.35)}
+.wrap{max-width:1184px;margin:0 auto}
+
+/* nav */
+.nav{display:flex;align-items:center;gap:18px;height:84px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:500;font-size:18px;letter-spacing:-.03em}
+.brand img{height:34px;width:auto}
+.brand small{display:block;font-size:11.5px;font-weight:400;color:var(--ink3);letter-spacing:0;margin-top:1px}
+.links{display:flex;gap:6px;margin:0 auto;font-size:14.5px}
+.links a{height:34px;display:inline-flex;align-items:center;padding:0 15px;border-radius:99px;border:1px solid transparent;transition:border-color .25s}
+.links a:hover,.links a.on{border-color:var(--line)}
+.side{display:flex;align-items:center;gap:8px}
+.pd{display:inline-flex;align-items:center;gap:8px;height:42px;padding:0 18px;border-radius:99px;background:var(--navy);color:#fff;font-size:14.5px;font-weight:500;transition:background .25s}
+.pd:hover{background:#000}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;gap:16px;height:56px;padding:0 7px 0 26px;border-radius:99px;font-weight:500;font-size:16px;letter-spacing:-.015em;transition:transform .3s var(--ease),background .25s;white-space:nowrap}
+.btn .ar{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;transition:transform .4s var(--ease)}
+.btn:hover .ar{transform:translateX(3px)}
+.btn:active{transform:scale(.98)}
+.btn-d{background:var(--navy);color:#fff}
+.btn-d .ar{background:var(--ac2);color:var(--navy)}
+.btn-d:hover{background:#000}
+.btn-a{background:var(--ac2);color:var(--navy)}
+.btn-a .ar{background:var(--navy);color:#fff}
+.btn-a:hover{background:#F2B455}
+.btn-t{background:var(--tint);color:var(--navy)}
+.btn-t .ar{background:var(--navy);color:#fff}
+.btn-t:hover{background:#F0DAB6}
+.mini{display:inline-flex;align-items:center;gap:10px;height:42px;padding:0 6px 0 16px;border-radius:99px;background:var(--navy);color:#fff;font-size:14px;font-weight:500;transition:background .25s}
+.mini .ar{width:30px;height:30px;border-radius:50%;background:var(--ac2);color:var(--navy);display:grid;place-items:center}
+.mini:hover{background:#000}
+.tag{justify-self:start;align-self:flex-start;display:inline-flex;align-items:center;height:30px;padding:0 13px;border-radius:99px;border:1px solid var(--line);font-size:13.5px}
+
+/* HERO: a tinted glass facade at golden hour */
+.hero{position:relative;border-radius:26px;overflow:hidden;isolation:isolate;color:#fff;
+  background:radial-gradient(60% 70% at 82% 8%,rgba(255,196,110,.55),transparent 60%),linear-gradient(180deg,#171B1E 0%,#2B3034 42%,#7A5636 80%,#C98E54 100%)}
+.panes{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.panes::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 196px,rgba(255,255,255,.10) 196px 199px,rgba(0,0,0,.18) 199px 202px)}
+.panes::after{content:"";position:absolute;inset:-20% -10%;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.10) 38%,transparent 44%,transparent 56%,rgba(255,255,255,.07) 61%,transparent 66%);animation:glint 9s var(--ease) infinite alternate}
+@keyframes glint{from{transform:translateX(-6%)}to{transform:translateX(6%)}}
+.h-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:40px;align-items:center;padding:64px 56px 40px;min-height:600px}
+.h-copy h1{font-size:clamp(40px,4.6vw,68px);line-height:.98;letter-spacing:-.052em;font-weight:600}
+.h-copy h1 span{display:block}
+.h-copy h1 .l2{font-weight:300;color:rgba(255,255,255,.8)}
+.h-copy .sub{margin-top:24px;font-size:19px;line-height:1.5;max-width:31ch;color:rgba(255,255,255,.9)}
+.h-cta{display:flex;flex-wrap:wrap;align-items:center;gap:12px 22px;margin-top:34px}
+.h-cta .call{font-size:15px;color:rgba(255,255,255,.86)}
+.h-cta .call a{color:#fff;font-weight:600;border-bottom:1px solid rgba(255,255,255,.55)}
+.h-vis{position:relative;justify-self:end;width:min(100%,410px)}
+.pcard{border-radius:24px;overflow:hidden;aspect-ratio:4/5;box-shadow:0 40px 70px -34px rgba(0,0,0,.75);background:#3a3430}
+.pcard img{width:100%;height:100%;object-fit:cover}
+.wd{position:absolute;background:#fff;color:var(--ink);border-radius:18px;box-shadow:0 22px 46px -22px rgba(0,0,0,.6)}
+.wd1{left:-54px;top:52px;padding:14px 16px 16px;min-width:214px}
+.wd1 .r{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13.5px;color:var(--ink2)}
+.wd1 .r em{font-style:normal;display:inline-flex;align-items:center;gap:5px;background:var(--tint);color:#7A430A;font-weight:600;font-size:12px;padding:4px 8px;border-radius:8px}
+.wd1 b{display:block;margin-top:8px;font-size:23px;font-weight:600;letter-spacing:-.03em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.wd2{right:14px;left:14px;bottom:14px;padding:10px 14px 10px 10px;display:flex;align-items:center;gap:12px;font-size:13.5px;line-height:1.3}
+.wd2 .ico{width:38px;height:38px;border-radius:50%;background:var(--tint2);color:var(--ac);display:grid;place-items:center;flex:none}
+.h-bot{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:0 56px 28px;font-size:13px}
+.thumbs{display:flex;align-items:center;gap:12px;color:var(--navy);font-weight:500}
+.thumbs .t{display:flex}
+.thumbs .t img{width:36px;height:36px;border-radius:50%;object-fit:cover;border:2px solid #fff;margin-left:-10px}
+.thumbs .t img:first-child{margin-left:0}
+.soc{display:flex;gap:18px;color:var(--navy);font-weight:500}
+.soc a:hover{text-decoration:underline;text-underline-offset:3px}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);padding:56px 0 20px}
+.stats div{text-align:center;padding:4px 20px;border-left:1px solid var(--line)}
+.stats div:first-child{border-left:0}
+.stats b{display:block;font-size:clamp(44px,4.6vw,64px);font-weight:600;letter-spacing:-.05em;line-height:1}
+.stats span{display:block;margin:10px auto 0;font-size:15px;color:var(--ink2);max-width:24ch;line-height:1.35}
+
+/* about + bento */
+.sec{padding:110px 0 0}
+.ab{display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:start}
+.ab .st{font-size:clamp(22px,2.1vw,28px);line-height:1.3;letter-spacing:-.025em}
+.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.bx{border-radius:26px;min-height:330px;position:relative;overflow:hidden}
+.bx-d{background:var(--navy);color:#fff;padding:28px;display:flex;flex-direction:column}
+.bx-d .ico{color:var(--ac2)}
+.bx-d .ico .ic{width:30px;height:30px}
+.bx-d p{margin-top:auto;font-size:clamp(20px,1.8vw,23px);line-height:1.28;letter-spacing:-.02em}
+.bx-d p .dim{color:#7E848C}
+.seg{margin-top:24px}
+.seg small{display:block;font-size:12.5px;color:#8C9299;margin-bottom:10px}
+.seg div{display:flex;flex-wrap:wrap;gap:6px}
+.seg button{height:34px;padding:0 12px;border-radius:99px;background:#262A2F;color:#C9CDD2;font-size:13px;font-weight:500;transition:background .25s,color .25s}
+.seg button:hover{background:#30353B}
+.seg button[aria-pressed=true]{background:var(--ac2);color:var(--navy)}
+.bx-p img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.fx{position:absolute;inset:0;pointer-events:none;transition:opacity .6s var(--ease),backdrop-filter .6s,-webkit-backdrop-filter .6s;opacity:0}
+.sim[data-f=jato] .fx{opacity:1;background:rgba(246,246,244,.62);backdrop-filter:blur(9px) saturate(.6);-webkit-backdrop-filter:blur(9px) saturate(.6)}
+.sim[data-f=prata] .fx{opacity:1;background:linear-gradient(120deg,rgba(210,214,220,.78),rgba(150,158,168,.55) 45%,rgba(232,236,240,.8) 70%,rgba(160,166,176,.6));backdrop-filter:contrast(.8);-webkit-backdrop-filter:contrast(.8)}
+.sim[data-f=fume] .fx{opacity:1;background:rgba(28,26,24,.5);backdrop-filter:saturate(.75);-webkit-backdrop-filter:saturate(.75)}
+.bx-p .gl{position:absolute;left:16px;bottom:16px;max-width:calc(100% - 32px);padding:10px 16px;border-radius:99px;background:rgba(20,23,26,.55);border:1px solid rgba(255,255,255,.3);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#fff;font-size:14px;font-weight:500}
+.bx-p .note{position:absolute;right:14px;top:14px;padding:6px 11px;border-radius:99px;background:rgba(255,255,255,.88);color:var(--ink2);font-size:12px}
+.bx-l{background:var(--paper);padding:26px;display:flex;flex-direction:column}
+.bx-l h3{font-size:22px;letter-spacing:-.025em}
+.bx-l .s{margin-top:6px;font-size:13.5px;color:var(--ink2);max-width:30ch}
+.films{margin-top:auto;display:grid;gap:12px;padding-top:22px;list-style:none;padding-left:0;margin-bottom:0}
+.films li{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:center;font-size:13.5px;line-height:1.3}
+.films b{display:block;font-weight:500;font-size:14.5px}
+.films span{color:var(--ink2)}
+.sw{width:44px;height:44px;border-radius:12px;border:1px solid rgba(0,0,0,.08)}
+.sw.j{background:linear-gradient(135deg,#F4F4F2,#E3E3E0)}
+.sw.p{background:linear-gradient(130deg,#E9ECEF,#9AA2AC 48%,#F1F3F5 70%,#AAB0B8)}
+.sw.f{background:linear-gradient(135deg,#4A4642,#24211F)}
+
+/* full-bleed */
+.fb{margin:110px -28px 0;position:relative;border-radius:26px;overflow:hidden;isolation:isolate;padding:110px 28px 64px;color:#fff;text-align:center}
+.fb>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transform:scale(1.04)}
+.fb::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(20,23,26,.62),rgba(20,23,26,.35) 45%,rgba(20,23,26,.72))}
+.fb h2{font-size:clamp(34px,4vw,56px);line-height:1.02;letter-spacing:-.045em;font-weight:600;max-width:17ch;margin:0 auto}
+.fb .lead{margin:16px auto 0;font-size:17.5px;max-width:52ch;color:rgba(255,255,255,.92)}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:56px auto 0;text-align:left}
+.c3{background:#fff;color:var(--ink);border-radius:22px;padding:22px;display:flex;flex-direction:column;min-height:270px}
+.c3 .ico{width:52px;height:52px;border-radius:50%;background:var(--tint);color:var(--ac);display:grid;place-items:center}
+.c3 .ico .ic{width:24px;height:24px}
+.c3 h3{margin-top:18px;font-size:22px;line-height:1.12;letter-spacing:-.03em;font-weight:600}
+.c3 p{margin-top:8px;font-size:15px;color:var(--ink2)}
+.c3 .mini{margin-top:auto;align-self:flex-start}
+.c3 p+.mini{margin-top:22px}
+
+/* carousel */
+.svc{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:stretch}
+.svc .l{display:flex;flex-direction:column;align-items:flex-start}
+.svc .l .st{margin-top:22px;font-size:clamp(21px,2vw,26px);line-height:1.3;letter-spacing:-.025em}
+.svc .l .pd{margin-top:auto}
+.car{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:4px}
+.car::-webkit-scrollbar{display:none}
+.it{flex:0 0 300px;scroll-snap-align:start;margin:0}
+.it .im{height:320px;border-radius:24px;overflow:hidden;position:relative}
+.it .im img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s var(--ease)}
+.it:hover .im img{transform:scale(1.05)}
+.it .im .lb{position:absolute;left:14px;top:14px;z-index:1;padding:7px 12px;border-radius:99px;background:rgba(20,23,26,.45);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);color:#fff;font-size:13px}
+.it .im b{position:absolute;left:18px;right:18px;bottom:16px;z-index:1;color:#fff;font-weight:500;font-size:20px;letter-spacing:-.02em;line-height:1.15;text-shadow:0 2px 14px rgba(0,0,0,.35)}
+.it .im::after{content:"";position:absolute;inset:auto 0 0;height:55%;background:linear-gradient(180deg,transparent,rgba(0,0,0,.5))}
+.it p{margin-top:12px;font-size:14.5px;color:var(--ink2);max-width:30ch}
+.arw{display:flex;gap:10px;margin-top:20px}
+.arw button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);display:grid;place-items:center;transition:background .2s,border-color .2s,color .2s}
+.arw button:hover{background:var(--navy);border-color:var(--navy);color:#fff}
+
+/* process */
+.proc{background:var(--paper);border-radius:26px;padding:56px;margin-top:110px}
+.pr-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}
+.pr-top h2{font-size:clamp(34px,3.8vw,54px);line-height:1;letter-spacing:-.045em}
+.pr-top p{color:var(--ink2);max-width:40ch;justify-self:end}
+.film{margin-top:40px;background:var(--navy);border-radius:28px;padding:14px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;position:relative}
+.film figure{margin:0;border-radius:18px;overflow:hidden;aspect-ratio:4/3.2;position:relative}
+.film img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.05);transition:filter .6s}
+.film figure:hover img{filter:none}
+.film figcaption{position:absolute;left:12px;top:12px;width:34px;height:34px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:600;font-size:14px}
+.notch{position:absolute;left:50%;bottom:-27px;transform:translateX(-50%);width:62px;height:62px;border-radius:50%;background:var(--paper);display:grid;place-items:center}
+.notch a{width:46px;height:46px;border-radius:50%;background:var(--ac2);color:var(--navy);display:grid;place-items:center;transition:transform .3s var(--ease)}
+.notch a:hover{transform:translateY(3px)}
+.boxes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:44px;list-style:none;padding:0}
+.boxes li{border-radius:22px;padding:22px;min-height:190px;display:flex;flex-direction:column}
+.boxes .n{font-size:13px;font-weight:500}
+.boxes h3{margin-top:auto;font-size:21px;letter-spacing:-.025em;font-weight:600}
+.boxes p{margin-top:8px;font-size:14.5px}
+.boxes .b1{background:var(--tint);color:var(--navy)}.boxes .b1 p{color:#5B4A33}
+.boxes .b2{background:var(--navy);color:#fff}.boxes .b2 p{color:#A9AEB5}
+.boxes .b3{background:#fff;color:var(--ink)}.boxes .b3 p{color:var(--ink2)}
+
+/* references */
+.com{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.com h2{font-size:clamp(32px,3.6vw,50px);line-height:1.02;letter-spacing:-.045em}
+.com blockquote{margin:26px 0 0;font-size:clamp(20px,1.9vw,25px);line-height:1.3;letter-spacing:-.02em;max-width:34ch}
+.refs{list-style:none;margin:26px 0 0;padding:0;display:grid;gap:10px}
+.refs li{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);border-radius:18px}
+.refs li .ico{width:38px;height:38px;border-radius:50%;background:var(--tint2);color:var(--ac);display:grid;place-items:center;flex:none}
+.refs b{display:block;font-weight:500}
+.refs span{font-size:14px;color:var(--ink2)}
+.com .pill{display:inline-flex;align-items:center;gap:10px;margin-top:26px;height:46px;padding:0 20px;border-radius:99px;background:var(--navy);color:#fff;font-size:14.5px;font-weight:500}
+.com .pill:hover{background:#000}
+.com .ph{border-radius:28px;overflow:hidden;aspect-ratio:1/1.05;background:var(--navy);position:relative}
+.com .ph img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08)}
+.com .ph .stamp{position:absolute;left:16px;bottom:16px;right:16px;background:#fff;border-radius:18px;padding:14px 16px;display:flex;align-items:center;gap:14px;font-size:14px;line-height:1.3}
+.com .ph .stamp img{height:30px;width:auto;filter:none}
+
+/* quote */
+.quote{display:grid;grid-template-columns:.85fr 1.15fr;gap:48px;align-items:start}
+.q-l h2{margin-top:18px;font-size:clamp(32px,3.6vw,50px);line-height:1.02;letter-spacing:-.045em}
+.q-l .lead{margin-top:16px;color:var(--ink2);font-size:17px;max-width:38ch}
+.steps{list-style:none;margin:28px 0 0;padding:0;display:grid;counter-reset:s}
+.steps li{display:grid;grid-template-columns:36px 1fr;gap:12px;padding:14px 0;border-top:1px solid var(--line);counter-increment:s}
+.steps li::before{content:counter(s);width:28px;height:28px;border-radius:50%;background:var(--tint);color:#7A430A;display:grid;place-items:center;font-size:13px;font-weight:600}
+.steps b{display:block;font-weight:500}
+.steps span{font-size:14.5px;color:var(--ink2)}
+.form{background:var(--paper);border-radius:26px;padding:30px;display:grid;gap:22px}
+.f-lbl{display:block;font-weight:500;font-size:14px;margin-bottom:10px}
+.f-lbl small{font-weight:400;color:var(--ink3);margin-left:6px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips label{position:relative;cursor:pointer}
+.chips input{position:absolute;opacity:0;pointer-events:none}
+.chips span{display:inline-flex;align-items:center;height:42px;padding:0 16px;border-radius:99px;background:#fff;border:1px solid var(--line);font-size:14px;transition:background .2s,color .2s,border-color .2s}
+.chips label:hover span{border-color:var(--ink3)}
+.chips input:checked+span{background:var(--navy);border-color:var(--navy);color:#fff}
+.chips input:focus-visible+span{outline:2px solid var(--ac);outline-offset:2px}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.fi{width:100%;height:52px;border-radius:14px;border:1px solid var(--line);background:#fff;padding:0 16px;font-size:15px;transition:border-color .2s,box-shadow .2s}
+textarea.fi{height:auto;min-height:100px;padding:14px 16px;resize:vertical;line-height:1.45}
+.fi:focus{outline:none;border-color:var(--ac);box-shadow:0 0 0 4px rgba(184,101,15,.14)}
+.form .btn{width:100%;justify-content:space-between}
+.f-help{font-size:13.5px;color:var(--ink2);margin-top:-8px}
+.status{min-height:20px;font-size:14px;color:#B42318;font-weight:500}
+
+.quote>*,.faq>*,.com>*,.ab>*,.svc>*,.pr-top>*,.h-grid>*{min-width:0}
+
+/* final CTA */
+.fin{margin-top:110px;text-align:center;padding:86px 24px;border-radius:26px;background:var(--navy);color:#fff;position:relative;overflow:hidden;isolation:isolate}
+.fin::before{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(50% 80% at 50% 120%,rgba(233,162,59,.45),transparent 70%),repeating-linear-gradient(90deg,transparent 0 150px,rgba(255,255,255,.06) 150px 152px)}
+.fin h2{font-size:clamp(30px,3.4vw,46px);letter-spacing:-.045em;line-height:1.05;font-weight:600}
+.fin p{margin:12px auto 0;max-width:46ch;color:#B9BEC5;font-size:17px}
+.fin .btn{margin-top:30px}
+
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px}
+.faq h2{margin-top:18px;font-size:clamp(30px,3.2vw,44px);letter-spacing:-.045em;line-height:1.05}
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-size:18px;font-weight:500;letter-spacing:-.02em}
+summary::-webkit-details-marker{display:none}
+summary .pl{width:32px;height:32px;border-radius:50%;background:var(--paper);display:grid;place-items:center;flex:none;transition:transform .3s var(--ease),background .3s}
+details[open] summary .pl{transform:rotate(45deg);background:var(--navy);color:#fff}
+details p{padding:0 48px 22px 0;color:var(--ink2)}
+
+/* footer */
+footer{margin:110px -28px 0;background:var(--navy);color:#fff;border-radius:26px 26px 0 0;padding:64px 56px 28px;overflow:hidden}
+.f-top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px}
+.f-top .lgw img{height:54px;width:auto;filter:invert(1)}
+.f-top p{margin-top:16px;color:#B3B8BF;font-size:14.5px;max-width:34ch}
+.f-col small{display:block;font-size:13px;color:#8C9299;margin-bottom:14px}
+.f-col a,.f-col span{display:block;margin-bottom:9px;font-size:15px;color:#E6E8EB}
+.f-col a:hover{color:var(--ac2)}
+.word{font-weight:600;font-size:min(13vw,178px);line-height:.8;letter-spacing:-.07em;margin:60px 0 0 -.04em;white-space:nowrap;user-select:none}
+.word span{color:var(--ac2)}
+.f-bot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:28px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);font-size:12.5px;color:#8C9299}
+
+.dock{display:none}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.rv.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}
+.h-copy>*,.pcard,.wd{opacity:0;transform:translateY(18px)}
+.ld .h-copy>*,.ld .pcard,.ld .wd{opacity:1;transform:none;transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.ld .h-copy>:nth-child(2){transition-delay:.08s}.ld .h-copy>:nth-child(3){transition-delay:.16s}
+.ld .pcard{transition-delay:.12s}.ld .wd1{transition-delay:.55s}.ld .wd2{transition-delay:.7s}
+
+@media (max-width:1100px){
+  .links{display:none}.side{margin-left:auto}
+  .h-grid{padding:52px 40px 34px;gap:28px}
+  .wd1{left:-24px}
+  .bento{grid-template-columns:1fr 1fr}
+  .bx-l{grid-column:1/-1;min-height:0}
+  .svc{grid-template-columns:1fr}
+  .svc .l .pd{margin-top:24px}
+}
+@media (max-width:860px){
+  .sheet{margin-top:20px}
+  .h-grid{grid-template-columns:1fr;min-height:0}
+  .h-vis{justify-self:center}
+  .wd1{left:-16px}
+  .ab,.pr-top,.com,.quote,.faq{grid-template-columns:1fr;gap:24px}
+  .pr-top p{justify-self:start}
+  .cards3{grid-template-columns:1fr;max-width:520px}
+  .proc{padding:40px 28px}
+  .com .ph{max-width:520px}
+  .f-top{grid-template-columns:1fr 1fr}.f-top>div:first-child{grid-column:1/-1}
+}
+@media (max-width:640px){
+  body{background-attachment:scroll}
+  .btn{white-space:normal;line-height:1.2;text-align:left;height:auto;min-height:56px;padding-top:7px;padding-bottom:7px}
+  .sheet{margin:8px 8px 0;padding:0 12px;border-radius:24px 24px 0 0}
+  .nav{height:68px;gap:8px}
+  .brand img{height:30px}
+  .brand small{display:none}
+  .brand{white-space:nowrap;font-size:17px}
+  .side .pd{display:none}
+  .word{font-size:13vw}
+  .hero{border-radius:20px}
+  .panes::before{background:repeating-linear-gradient(90deg,transparent 0 118px,rgba(255,255,255,.10) 118px 120px,rgba(0,0,0,.18) 120px 122px)}
+  .h-grid{padding:36px 20px 24px}
+  .h-copy h1{font-size:clamp(28px,8.6vw,44px)}
+  .h-copy .sub{font-size:16.5px}
+  .h-cta .btn{width:100%;justify-content:space-between}
+  .h-vis{width:100%}
+  .pcard{aspect-ratio:4/4.3}
+  .wd1{left:12px;top:12px;min-width:0;padding:12px 14px}
+  .wd1 b{font-size:20px}
+  .h-bot{flex-direction:column;align-items:flex-start;padding:0 20px 22px}
+  .stats{grid-template-columns:1fr;padding:40px 0 0}
+  .stats div{border-left:0;border-top:1px solid var(--line);padding:22px 0}
+  .stats div:first-child{border-top:0}
+  .sec{padding-top:80px}
+  .bento{grid-template-columns:1fr;gap:12px}
+  .bx{min-height:300px}
+  .bx-l{min-height:0}
+  .fb{margin:80px -12px 0;padding:72px 14px 22px;border-radius:20px}
+  .c3{min-height:0}
+  .it{flex-basis:78%}
+  .it .im{height:280px}
+  .proc{margin-top:80px;padding:30px 16px;border-radius:20px}
+  .film{grid-template-columns:1fr;padding:10px;border-radius:22px}
+  .film figure{aspect-ratio:16/10}
+  .boxes{grid-template-columns:1fr}
+  .boxes li{min-height:0}
+  .boxes h3{margin-top:28px}
+  .form{padding:18px;border-radius:20px}
+  .f2{grid-template-columns:1fr}
+  .fin{margin-top:80px;padding:60px 18px;border-radius:20px}
+  .fin .btn{width:100%;justify-content:space-between}
+  details p{padding-right:0}
+  summary{font-size:16.5px}
+  footer{margin:80px -12px 0;padding:48px 22px 110px;border-radius:20px 20px 0 0}
+  .f-top{grid-template-columns:1fr}
+  .dock{display:flex;gap:8px;position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:50;transform:translateY(150%);transition:transform .45s var(--ease)}
+  .dock.on{transform:none}
+  .dock .btn{flex:1;justify-content:space-between;box-shadow:0 18px 40px -14px rgba(0,0,0,.6)}
+  .dock .t2{width:56px;height:56px;border-radius:50%;background:var(--ac2);color:var(--navy);display:grid;place-items:center;flex:none;box-shadow:0 18px 40px -14px rgba(0,0,0,.6)}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition-duration:.01ms!important;animation:none!important}
+  .rv,.h-copy>*,.pcard,.wd{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<div class="bgc" aria-hidden="true"><i class="a"></i><i class="b"></i></div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-ar" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-ne" viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+  <symbol id="i-dn" viewBox="0 0 24 24"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+  <symbol id="i-l" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.5 20.5 5 16a8.5 8.5 0 1 1 3.2 3.1z"/><path d="M9 9.2c.2 2.6 3.2 5.6 5.8 5.8l1.2-1.4-2-1-1 .8a5 5 0 0 1-2.4-2.4l.8-1-1-2z"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="2.6"/><path d="M4 20 20 4"/></symbol>
+  <symbol id="i-bld" viewBox="0 0 24 24"><path d="M4 21V5.5L12 3l8 2.5V21"/><path d="M8 8h2M14 8h2M8 12h2M14 12h2M8 16h2M14 16h2M3 21h18"/></symbol>
+  <symbol id="i-home" viewBox="0 0 24 24"><path d="M4 10.5 12 4l8 6.5V20H4z"/><path d="M9.5 20v-5.5h5V20"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.6-6.5-11a6.5 6.5 0 0 1 13 0c0 5.4-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="i-hosp" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="M12 8v6M9 11h6M9 21v-3h6v3"/></symbol>
+</svg>
+
+<div class="sheet">
+<div class="wrap">
+  <header class="nav">
+    <a class="brand" href="#top" aria-label="DG Visual Film, início"><img src="img/logo-sm.webp" alt="" width="480" height="364"><span>DG Visual Film<small>Películas arquitetônicas</small></span></a>
+    <nav class="links" aria-label="Seções">
+      <a class="on" href="#sobre">Sobre</a><a href="#peliculas">Películas</a><a href="#obras">Obras</a><a href="#processo">Como funciona</a><a href="#orcamento">Orçamento</a>
+    </nav>
+    <div class="side">
+      <a class="pd" href="#orcamento"><span>Pedir orçamento</span><svg class="ic"><use href="#i-ne"/></svg></a>
+    </div>
+  </header>
+
+  <section class="hero" id="top" aria-labelledby="hT">
+    <div class="panes" aria-hidden="true"></div>
+    <div class="h-grid">
+      <div class="h-copy">
+        <h1 id="hT"><span>Películas para vidro</span><span class="l2">que deixam a luz e seguram o resto.</span></h1>
+        <p class="sub">Controle solar, privacidade e proteção UV para casas, condomínios e empresas em Campinas e região. Sem trocar o vidro.</p>
+        <div class="h-cta">
+          <a class="btn btn-a" href="#orcamento"><span>Pedir orçamento</span><span class="ar"><svg class="ic"><use href="#i-ar"/></svg></span></a>
+          <p class="call">ou chame no <a href="https://wa.me/5519989205208" target="_blank" rel="noopener">WhatsApp</a></p>
+        </div>
+      </div>
+      <div class="h-vis">
+        <div class="pcard"><img src="img/patio.webp" alt="Área de lazer de uma residência com fechamento em vidro e película aplicada pela DG Visual Film" width="1600" height="1577" fetchpriority="high"></div>
+        <div class="wd wd1"><div class="r"><span>Orçamento</span><em><svg class="ic" style="width:13px;height:13px"><use href="#i-wa"/></svg>WhatsApp</em></div><b>(19) 98920-5208</b></div>
+        <div class="wd wd2"><span class="ico"><svg class="ic"><use href="#i-pin"/></svg></span><span><b>Aplicação real</b><br>Fechamento em vidro residencial</span></div>
+      </div>
+    </div>
+    <div class="h-bot">
+      <div class="thumbs"><span class="t"><img src="img/arch3.webp" alt="" width="1600" height="883"><img src="img/white.webp" alt="" width="1600" height="684"><img src="img/deck.webp" alt="" width="1600" height="1608"></span><span>Fotos reais das nossas aplicações.<br>Sem imagens de banco.</span></div>
+      <div class="soc"><a href="https://www.instagram.com/dgvisualfilm/" target="_blank" rel="noopener">Instagram ↗</a><a href="https://wa.me/5519989205208" target="_blank" rel="noopener">WhatsApp ↗</a></div>
+    </div>
+  </section>
+
+  <div class="stats" role="list">
+    <div role="listitem"><b>99%</b><span>de bloqueio UV (VA e VB) na película jato branco</span></div>
+    <div role="listitem"><b>5 anos</b><span>de garantia na película jato branco</span></div>
+    <div role="listitem"><b>2</b><span>frentes de atendimento: residencial e corporativo</span></div>
+  </div>
+
+<main id="main">
+  <section class="sec" id="sobre" aria-labelledby="abT">
+    <div class="ab">
+      <span class="tag rv">Sobre a DG</span>
+      <p class="st rv d1" id="abT">A DG Visual Film aplica películas arquitetônicas em Campinas e região. Menos calor e reflexo, mais privacidade e proteção, aproveitando o vidro que você já tem.</p>
+    </div>
+    <div class="bento">
+      <article class="bx bx-d rv">
+        <span class="ico"><svg class="ic"><use href="#i-sun"/></svg></span>
+        <p>O vidro continua lá. <span class="dim">Com a película certa,</span> você escolhe o que passa <span class="dim">e o que fica do lado de fora.</span></p>
+        <div class="seg"><small id="segL">Veja no vidro ao lado</small><div role="group" aria-labelledby="segL">
+          <button type="button" data-f="none" aria-pressed="true">Sem película</button><button type="button" data-f="jato" aria-pressed="false">Jato branco</button><button type="button" data-f="prata" aria-pressed="false">Espelhada</button><button type="button" data-f="fume" aria-pressed="false">Fumê</button>
+        </div></div>
+      </article>
+      <article class="bx bx-p sim rv d1" id="sim" data-f="none"><img src="img/deck.webp" alt="Varanda com vidro e deck de madeira" loading="lazy" width="1600" height="1608"><span class="fx" aria-hidden="true"></span><span class="note">Simulação ilustrativa</span><span class="gl" id="simL" aria-live="polite">Vidro sem película</span></article>
+      <article class="bx bx-l rv d2">
+        <h3>Uma película para cada vidro</h3>
+        <p class="s">Indicamos o tipo pelo que incomoda: sol, falta de privacidade ou reflexo.</p>
+        <ul class="films">
+          <li><span class="sw j" aria-hidden="true"></span><div><b>Jato branco</b><span>Efeito fosco. Passa luz, não passa olhar.</span></div></li>
+          <li><span class="sw p" aria-hidden="true"></span><div><b>Espelhada prata</b><span>Reflete o sol e a visão de fora durante o dia.</span></div></li>
+          <li><span class="sw f" aria-hidden="true"></span><div><b>Solar fumê</b><span>Escurece o vidro e reduz o calor e a claridade.</span></div></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="fb" id="peliculas" aria-labelledby="fbT">
+    <img src="img/enclosure.webp" alt="" loading="lazy" width="1600" height="818">
+    <h2 class="rv" id="fbT">O que a película resolve no seu vidro</h2>
+    <p class="lead rv d1">Escolha o problema e já preparamos a mensagem de orçamento com ele.</p>
+    <div class="cards3">
+      <article class="c3 rv"><span class="ico"><svg class="ic"><use href="#i-sun"/></svg></span><h3>Controle solar</h3><p>Menos calor, claridade e reflexo em salas, varandas e escritórios.</p><a class="mini" href="#orcamento" data-pre="Controle solar"><span>Pedir orçamento</span><span class="ar"><svg class="ic" style="width:15px;height:15px"><use href="#i-ar"/></svg></span></a></article>
+      <article class="c3 rv d1"><span class="ico"><svg class="ic"><use href="#i-eye"/></svg></span><h3>Privacidade</h3><p>Jato branco em varandas, banheiros e divisórias. A luz entra, a visão não.</p><a class="mini" href="#orcamento" data-pre="Privacidade (jato branco)"><span>Pedir orçamento</span><span class="ar"><svg class="ic" style="width:15px;height:15px"><use href="#i-ar"/></svg></span></a></article>
+      <article class="c3 rv d2"><span class="ico"><svg class="ic"><use href="#i-bld"/></svg></span><h3>Corporativo</h3><p>Fachadas, vitrines e salas de empresas, condomínios e clínicas.</p><a class="mini" href="#orcamento" data-pre="Empresa"><span>Pedir orçamento</span><span class="ar"><svg class="ic" style="width:15px;height:15px"><use href="#i-ar"/></svg></span></a></article>
+    </div>
+  </section>
+
+  <section class="sec" id="obras" aria-labelledby="svT">
+    <div class="svc">
+      <div class="l">
+        <span class="tag rv">Aplicações</span>
+        <p class="st rv d1" id="svT">Varandas, fechamentos em vidro e fachadas. Veja como fica e mande uma foto do seu vidro.</p>
+        <div class="arw"><button type="button" id="prev" aria-label="Foto anterior"><svg class="ic"><use href="#i-l"/></svg></button><button type="button" id="next" aria-label="Próxima foto"><svg class="ic"><use href="#i-ar"/></svg></button></div>
+        <a class="pd" href="#orcamento"><span>Pedir orçamento</span><svg class="ic"><use href="#i-ne"/></svg></a>
+      </div>
+      <div class="car" id="car" tabindex="0" aria-label="Aplicações recentes">
+        <figure class="it"><div class="im"><img src="img/white.webp" alt="Vidros de varanda com película jato branco, vista de dentro" loading="lazy" width="1600" height="684"><span class="lb">Privacidade</span><b>Jato branco na varanda</b></div><figcaption><p>Condomínio Avalon Dom Pedro, Campinas.</p></figcaption></figure>
+        <figure class="it"><div class="im"><img src="img/arch3.webp" alt="Fechamento de varanda em arco com película aplicada" loading="lazy" width="1600" height="883"><span class="lb">Condomínio</span><b>Varanda em arco</b></div><figcaption><p>Película aplicada em todo o fechamento de vidro.</p></figcaption></figure>
+        <figure class="it"><div class="im"><img src="img/enclosure.webp" alt="Fechamento em vidro de área de lazer residencial" loading="lazy" width="1600" height="818"><span class="lb">Residencial</span><b>Área de lazer</b></div><figcaption><p>Fechamento em vidro voltado para o jardim.</p></figcaption></figure>
+        <figure class="it"><div class="im"><img src="img/arch1.webp" alt="Fachada de prédio com varanda em vidro e película" loading="lazy" width="1600" height="668"><span class="lb">Condomínio</span><b>Vista da fachada</b></div><figcaption><p>De fora, o vidro fica uniforme e discreto.</p></figcaption></figure>
+        <figure class="it"><div class="im"><img src="img/treadmill.webp" alt="Espaço de academia em casa com fechamento em vidro" loading="lazy" width="1600" height="1585"><span class="lb">Residencial</span><b>Espaço fitness</b></div><figcaption><p>Vidro voltado para o deck e o jardim.</p></figcaption></figure>
+        <figure class="it"><div class="im"><img src="img/palms.webp" alt="Vista de condomínio através de vidro de varanda" loading="lazy" width="1600" height="875"><span class="lb">Condomínio</span><b>Vista pelo vidro</b></div><figcaption><p>Condomínio Avalon Dom Pedro, Campinas.</p></figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="proc" id="processo" aria-labelledby="prT">
+    <div class="pr-top">
+      <h2 class="rv" id="prT">Como funciona a aplicação</h2>
+      <p class="rv d1">Três passos, do primeiro contato ao vidro pronto. Passe o cursor nas fotos para vê-las em cores.</p>
+    </div>
+    <div class="film rv">
+      <figure><img src="img/palms.webp" alt="Passo 1: vidro antes da película" loading="lazy" width="1600" height="875"><figcaption>1</figcaption></figure>
+      <figure><img src="img/arch2.webp" alt="Passo 2: película escolhida para a varanda" loading="lazy" width="1600" height="886"><figcaption>2</figcaption></figure>
+      <figure><img src="img/white.webp" alt="Passo 3: película jato branco aplicada" loading="lazy" width="1600" height="684"><figcaption>3</figcaption></figure>
+      <span class="notch"><a href="#orcamento" aria-label="Ir para o orçamento"><svg class="ic"><use href="#i-dn"/></svg></a></span>
+    </div>
+    <ol class="boxes">
+      <li class="b1 rv"><span class="n">Passo 1</span><h3>Avaliação do vidro</h3><p>Você manda fotos e contamos o que dá para fazer. Se precisar, medimos no local.</p></li>
+      <li class="b2 rv d1"><span class="n">Passo 2</span><h3>Escolha da película</h3><p>Indicamos o tipo e o tom pelo que você quer resolver.</p></li>
+      <li class="b3 rv d2"><span class="n">Passo 3</span><h3>Aplicação</h3><p>Película aplicada sobre o vidro existente, com acabamento nas bordas.</p></li>
+    </ol>
+  </section>
+
+  <section class="sec" id="referencias" aria-labelledby="coT">
+    <div class="com">
+      <div>
+        <span class="tag rv">Condomínios e empresas</span>
+        <h2 class="rv d1" id="coT" style="margin-top:18px">Do apartamento ao prédio inteiro</h2>
+        <blockquote class="rv d2">Aplicamos em residências, condomínios e espaços corporativos, com orçamento claro para o síndico ou para a empresa.</blockquote>
+        <ul class="refs rv d2">
+          <li><span class="ico"><svg class="ic"><use href="#i-bld"/></svg></span><div><b>Condomínio Avalon Dom Pedro</b><span>Campinas · Película jato branco nas varandas</span></div></li>
+          <li><span class="ico"><svg class="ic"><use href="#i-hosp"/></svg></span><div><b>Hospital AME Campinas</b><span>Campinas · Aplicação corporativa</span></div></li>
+          <li><span class="ico"><svg class="ic"><use href="#i-home"/></svg></span><div><b>Residências</b><span>Fechamentos em vidro, varandas e áreas de lazer</span></div></li>
+        </ul>
+        <a class="pill rv d2" href="#orcamento" data-pre="Condomínio"><span>Pedir orçamento para o condomínio</span><svg class="ic"><use href="#i-ne"/></svg></a>
+      </div>
+      <div class="ph rv d1"><img src="img/arch2.webp" alt="Prédio com varandas em arco fechadas com vidro e película" loading="lazy" width="1600" height="886"><div class="stamp"><img src="img/logo-sm.webp" alt="" width="480" height="364"><span><b>DG Visual Film</b><br><small style="color:var(--ink2)">Películas arquitetônicas · Campinas</small></span></div></div>
+    </div>
+  </section>
+
+  <section class="sec" id="orcamento" aria-labelledby="qT">
+    <div class="quote">
+      <div class="q-l">
+        <span class="tag">Orçamento</span>
+        <h2 id="qT">Conte sobre o seu vidro</h2>
+        <p class="lead">Preencha e o WhatsApp abre com a mensagem pronta. Lá mesmo você manda as fotos.</p>
+        <ol class="steps">
+          <li><div><b>Você manda fotos</b><span>Do vidro e do que incomoda.</span></div></li>
+          <li><div><b>Indicamos a película</b><span>Tipo, tom e se precisa medir no local.</span></div></li>
+          <li><div><b>Orçamento</b><span>Valor e prazo antes de começar.</span></div></li>
+          <li><div><b>Aplicação</b><span>Vidro pronto, sem obra.</span></div></li>
+        </ol>
+      </div>
+      <form class="form" id="qform" novalidate>
+        <fieldset style="border:0;margin:0;padding:0">
+          <legend class="f-lbl">O que você precisa?</legend>
+          <div class="chips" id="chips"></div>
+        </fieldset>
+        <fieldset style="border:0;margin:0;padding:0">
+          <legend class="f-lbl">Onde é?</legend>
+          <div class="chips" id="place"></div>
+        </fieldset>
+        <div class="f2">
+          <label><span class="f-lbl">Seu nome</span><input class="fi" id="name" autocomplete="name" maxlength="60"></label>
+          <label><span class="f-lbl">Bairro ou cidade</span><input class="fi" id="zone" maxlength="60" placeholder="Cambuí, Valinhos…"></label>
+        </div>
+        <label><span class="f-lbl">Conte um pouco<small>opcional</small></span><textarea class="fi" id="det" maxlength="600" placeholder="Quantos vidros, tamanho aproximado, o que incomoda hoje"></textarea></label>
+        <button type="submit" class="btn btn-d"><span>Abrir WhatsApp com minha mensagem</span><span class="ar"><svg class="ic"><use href="#i-wa"/></svg></span></button>
+        <p class="f-help">Vai para o (19) 98920-5208. Nada é enviado até você tocar em enviar no WhatsApp.</p>
+        <p class="status" id="status" role="status"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="fin" aria-labelledby="fiT">
+    <h2 class="rv" id="fiT">Tudo começa com uma foto do vidro</h2>
+    <p class="rv d1">Mande pelo WhatsApp e dizemos qual película resolve o seu caso.</p>
+    <a class="btn btn-a rv d2" id="finWa" href="https://wa.me/5519989205208" target="_blank" rel="noopener"><span>Enviar foto pelo WhatsApp</span><span class="ar"><svg class="ic"><use href="#i-ar"/></svg></span></a>
+  </section>
+
+  <section class="sec" id="faq" aria-labelledby="fqT">
+    <div class="faq">
+      <div><span class="tag">Perguntas</span><h2 id="fqT">O que costumam nos perguntar</h2></div>
+      <div>
+        <details><summary><span>Como peço um orçamento?</span><span class="pl"><svg class="ic"><use href="#i-plus"/></svg></span></summary><p>Pelo WhatsApp (19) 98920-5208. Mande fotos do vidro e conte o que incomoda. Se for preciso, combinamos uma visita para medir.</p></details>
+        <details><summary><span>Precisa trocar o vidro?</span><span class="pl"><svg class="ic"><use href="#i-plus"/></svg></span></summary><p>Não. A película é aplicada sobre o vidro que já está instalado.</p></details>
+        <details><summary><span>A película deixa o ambiente escuro?</span><span class="pl"><svg class="ic"><use href="#i-plus"/></svg></span></summary><p>Depende do tipo. O jato branco deixa a luz passar e bloqueia a visão. Nas películas solares você escolhe o tom, do mais claro ao mais escuro.</p></details>
+        <details><summary><span>Qual é a garantia?</span><span class="pl"><svg class="ic"><use href="#i-plus"/></svg></span></summary><p>Varia conforme a película escolhida. A garantia vai informada no orçamento, antes da aplicação.</p></details>
+        <details><summary><span>Quais regiões vocês atendem?</span><span class="pl"><svg class="ic"><use href="#i-plus"/></svg></span></summary><p>Campinas e região. Se você estiver mais longe, pergunte pelo WhatsApp.</p></details>
+      </div>
+    </div>
+  </section>
+</main>
+
+  <footer>
+    <div class="f-top">
+      <div><span class="lgw"><img src="img/logo-sm.webp" alt="DG Visual Film" width="480" height="364"></span><p>DG Visual Film. Películas arquitetônicas para residências, condomínios e empresas em Campinas e região.</p></div>
+      <div class="f-col"><small>Contato</small><a href="https://wa.me/5519989205208" target="_blank" rel="noopener">(19) 98920-5208</a><a href="https://www.instagram.com/dgvisualfilm/" target="_blank" rel="noopener">@dgvisualfilm</a><span>Campinas, SP</span></div>
+      <div class="f-col"><small>Películas</small><span>Controle solar</span><span>Jato branco</span><span>Espelhada</span><span>Corporativo</span></div>
+    </div>
+    <div class="word" aria-hidden="true">DG <span>Visual Film</span></div>
+    <div class="f-bot"><span>© 2026 DG Visual Film</span><span>Campinas · SP</span></div>
+  </footer>
+</div>
+</div>
+
+<div class="dock" id="dock"><a class="btn btn-d" href="#orcamento"><span>Pedir orçamento</span><span class="ar"><svg class="ic"><use href="#i-ar"/></svg></span></a><a class="t2" href="https://wa.me/5519989205208" target="_blank" rel="noopener" aria-label="Abrir WhatsApp"><svg class="ic"><use href="#i-wa"/></svg></a></div>
+
+<script>
+const WA="5519989205208";
+const NEEDS=["Controle solar","Privacidade (jato branco)","Espelhada","Proteção UV","Não sei qual película"];
+const PLACES=["Casa","Apartamento","Condomínio","Empresa"];
+const $=s=>document.querySelector(s);
+document.querySelectorAll("[data-dup]").forEach(i=>{const o=document.querySelector(`[data-key="${i.dataset.dup}"]`);if(o)i.src=o.src});
+function mk(box,arr,name){arr.forEach(k=>{const l=document.createElement("label");const i=document.createElement("input");i.type="checkbox";i.name=name;i.value=k;const s=document.createElement("span");s.textContent=k;l.append(i,s);box.appendChild(l)})}
+const chips=$("#chips"),place=$("#place");mk(chips,NEEDS,"need");mk(place,PLACES,"place");
+$("#finWa").href=`https://wa.me/${WA}?text=${encodeURIComponent("Olá, DG Visual Film. Vou mandar uma foto do meu vidro para vocês me dizerem qual película resolve.")}`;
+/* film simulator */
+const sim=$("#sim"),simL=$("#simL"),LB={none:"Vidro sem película",jato:"Com jato branco",prata:"Com espelhada prata",fume:"Com solar fumê"};
+document.querySelectorAll(".seg button").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".seg button").forEach(x=>x.setAttribute("aria-pressed",x===b));sim.dataset.f=b.dataset.f;simL.textContent=LB[b.dataset.f]}));
+/* preselect from cards */
+document.querySelectorAll("[data-pre]").forEach(a=>a.addEventListener("click",()=>{const v=a.dataset.pre;const i=document.querySelector(`#qform input[value="${v}"]`);if(i)i.checked=true;$("#status").textContent=""}));
+/* carousel */
+const car=$("#car");const step=()=>car.querySelector(".it").getBoundingClientRect().width+18;
+$("#prev").addEventListener("click",()=>car.scrollBy({left:-step(),behavior:"smooth"}));
+$("#next").addEventListener("click",()=>car.scrollBy({left:step(),behavior:"smooth"}));
+/* form */
+$("#qform").addEventListener("submit",e=>{
+  e.preventDefault();
+  const pick=n=>[...document.querySelectorAll(`input[name=${n}]:checked`)].map(i=>i.value);
+  const needs=pick("need"),places=pick("place");
+  if(!needs.length){$("#status").textContent="Escolha pelo menos uma opção em “O que você precisa?”.";chips.querySelector("input").focus();return}
+  const v=id=>$("#"+id).value.trim();
+  const L=["Olá, DG Visual Film. Quero um orçamento de película.","",`Preciso de: ${needs.join(", ")}`];
+  if(places.length)L.push(`Local: ${places.join(", ")}`);
+  if(v("name"))L.push(`Nome: ${v("name")}`);
+  if(v("zone"))L.push(`Bairro/cidade: ${v("zone")}`);
+  if(v("det"))L.push(`Detalhes: ${v("det")}`);
+  window.open(`https://wa.me/${WA}?text=${encodeURIComponent(L.join("\n"))}`,"_blank","noopener");
+});
+$("#qform").addEventListener("change",()=>{$("#status").textContent=""});
+/* motion */
+const rm=matchMedia("(prefers-reduced-motion: reduce)").matches;
+requestAnimationFrame(()=>setTimeout(()=>document.body.classList.add("ld"),60));
+const els=document.querySelectorAll(".rv");
+if(rm||!("IntersectionObserver" in window))els.forEach(e=>e.classList.add("in"));
+else{const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}}),{threshold:.12,rootMargin:"0px 0px -6% 0px"});els.forEach(e=>io.observe(e))}
+const dock=$("#dock"),hero=$("#top"),q=$("#orcamento"),ft=document.querySelector("footer");
+function dk(){const r=q.getBoundingClientRect(),f=ft.getBoundingClientRect();dock.classList.toggle("on",scrollY>hero.offsetHeight*.7&&!(r.top<innerHeight&&r.bottom>0)&&!(f.top<innerHeight))}
+addEventListener("scroll",dk,{passive:true});dk();
+</script>
+</body>
+</html>
